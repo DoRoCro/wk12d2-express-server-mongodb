@@ -37,17 +37,16 @@ AlbumQuery.prototype = {
     })
   },
 
-  update: function (albumToUpdate, onUpdateFinished) {
+  update: function (albumToUpdateID, onUpdateFinished) {
     MongoClient.connect(this.url, function (err, db) {
       if (err) console.log('Connection error on add: ' + err)
       if (db) {
-        var collection = db.collection.find(albumToUpdate)
-        collection.insert(albumToAdd)
-        collection.find().toArray(function (err, docs) {
-          if (err) { console.log('Connection error on add: ' + err) }
-          console.log(docs)
-          onUpdateFinished(docs)
-        })
+        // var collection = db.collection.find({id: albumToUpdateID})
+        // TODO collection.find().toArray(function (err, docs) {
+          // if (err) { console.log('Connection error on add: ' + err) }
+          // console.log(docs)
+          // onUpdateFinished(docs)
+        // })
       }
     })
   }

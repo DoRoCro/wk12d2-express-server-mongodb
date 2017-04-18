@@ -39,7 +39,7 @@ hmhbRouter.put('/:id', function (req, res) {
     // res.json({data: albums})
     res.json(albums)
     // need some db update code here...
-    albumQuery.update(albums[req.params.id], function (results) {
+    albumQuery.update([req.params.id], function (results) {
       // do nothing?
     })
   })
