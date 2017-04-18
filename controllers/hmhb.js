@@ -7,13 +7,15 @@ var albumQuery = new AlbumQuery()
 
 // album by id
 hmhbRouter.get('/:id', function (req, res) {
-  res.json(albums[req.params.id])
+  albumQuery.all(function (albums) {
+    res.json(albums[req.params.id])
+  })
 })
 
 // album index
 hmhbRouter.get('/', function (req, res) {
-  albumQuery.all(function (docs) {
-    res.json(docs)
+  albumQuery.all(function (albums) {
+    res.json(albums)
   })
 })
 
