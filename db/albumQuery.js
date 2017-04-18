@@ -29,8 +29,24 @@ AlbumQuery.prototype = {
         var collection = db.collection('albums')
         collection.insert(albumToAdd)
         collection.find().toArray(function (err, docs) {
+          if (err) { console.log('Connection error on add: ' + err) }
           console.log(docs)
           onQueryFinished(docs)
+        })
+      }
+    })
+  },
+
+  update: function (albumToUpdate, onUpdateFinished) {
+    MongoClient.connect(this.url, function (err, db) {
+      if (err) console.log('Connection error on add: ' + err)
+      if (db) {
+        var collection = db.collection.find(albumToUpdate)
+        collection.insert(albumToAdd)
+        collection.find().toArray(function (err, docs) {
+          if (err) { console.log('Connection error on add: ' + err) }
+          console.log(docs)
+          onUpdateFinished(docs)
         })
       }
     })
