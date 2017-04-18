@@ -49,6 +49,17 @@ AlbumQuery.prototype = {
         // })
       }
     })
+  },
+
+  delete: function (albumDeleteID, onDeleteFinished) {
+    MongoClient.connect(this.url, function (err, db) {
+      if (err) console.log('Connection error on add: ' + err)
+      if (db) {
+        // TODO - delete record
+
+        // onDeleteFinished
+      }
+    })
   }
 }
 

@@ -45,7 +45,7 @@ hmhbRouter.put('/:id', function (req, res) {
   })
 })
 
-// add new film
+// add new album
 hmhbRouter.post('/', function (req, res) {
   var newAlbum = {
     album_type: req.body.album_type,
@@ -64,4 +64,12 @@ hmhbRouter.post('/', function (req, res) {
   })
 })
 
+// TODO delete album
+hmhbRouter.delete('/:id', function (req, res) {
+  albumQuery.delete(req.params.id, function (albums) {
+    res.json(albums)
+    albums.splice(req.params.id, 1)
+    res.json({data: albums})
+  })
+})
 module.exports = hmhbRouter
