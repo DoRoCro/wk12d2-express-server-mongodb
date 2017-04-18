@@ -1,0 +1,23 @@
+{
+  "name": "w12d2homework",
+  "version": "1.0.0",
+  "description": "Simple server using MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "node mocha controllers/specs",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "author": "Douglas Crooke",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "body-parser": "^1.17.1",
+    "mocha": "^3.2.0"
+  }
+}
