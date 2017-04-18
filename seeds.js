@@ -1,4 +1,7 @@
-[
+use hmhb_albums
+
+
+db.films.insert([
   {
     'album_type': 'album',
     'artists': [
@@ -1325,4 +1328,4 @@
     'type': 'album',
     'uri': 'spotify:album:05pl4cXA60fnBTbuVyrLtu'
   }
-]
+])
