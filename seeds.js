@@ -1,7 +1,7 @@
 use hmhb_albums
 
 
-db.films.insert([
+db.albums.insert([
   {
     'album_type': 'album',
     'artists': [
